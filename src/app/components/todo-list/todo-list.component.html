@@ -1,0 +1,25 @@
+<div class="todo-list-wrapper">
+    <div class="todo-list">
+      <h2>To do</h2>
+      <app-todo-item
+        *ngFor="let item of todoList | statusfiflter:false"
+        [item]="item"
+        (toggleComplete)="onToggleComplete(item)"
+        [ngClass]="{'pending': item.isCompleted ==false}"
+      >
+      </app-todo-item>
+    </div>
+    <div class="todo-list">
+      <h2>Done</h2>
+      <app-todo-item
+        *ngFor="let item of todoList | statusfiflter:true"
+        [item]="item"
+        (toggleComplete)="onToggleComplete(item)"
+
+        appMagnifier
+      >
+      </app-todo-item>
+    </div>
+  </div>
+
+  
