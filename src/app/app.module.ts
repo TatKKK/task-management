@@ -1,32 +1,31 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { TodoModule } from './todo/todo.module';
+import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddTodoComponent } from './components/add-todo/add-todo.component';
-import { TodoItemComponent } from './components/todo-item/todo-item.component';
-import { TodoListComponent } from './components/todo-list/todo-list.component';
-import { MagnifierDirective } from './directives/magnifier.directive';
-import { HighlightDirective } from './directives/highlight.directive';
-import { StatusfiflterPipe } from './pipes/statusfiflter.pipe';
+
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    AddTodoComponent,
-    TodoItemComponent,
-    TodoListComponent,
-    MagnifierDirective,
-    HighlightDirective,
-    StatusfiflterPipe
+    AppComponent,  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    TodoModule,
+    SharedModule, 
+    CoreModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

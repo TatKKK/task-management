@@ -12,13 +12,12 @@ export class AddTodoComponent implements OnInit {
 
   @Output() addTodo=new EventEmitter<TodoItem>();
   
-  ngOnInit(): void {
-    
+  ngOnInit(): void {    
   }
 
   constructor(){
-
   }
+
   onSubmit(){
     this.addTodo.emit({
       id:this.idCounter,
@@ -28,6 +27,7 @@ export class AddTodoComponent implements OnInit {
 
     this.idCounter++;
     this.todoItemName='';
+    console.log(this.todoItemName, this.idCounter)
   }
 
 }

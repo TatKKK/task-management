@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup} from '@angular/forms';
-import { TodoItem } from './models/todo.model';
+
+
 
 @Component({
   selector: 'app-root',
@@ -11,15 +12,9 @@ import { TodoItem } from './models/todo.model';
 export class AppComponent {
   title = 'task-management';
 
- todoList:TodoItem[]=[];
+
 
  constructor(){}
 
- onAddTodo(item:TodoItem){
-  this.todoList=[...this.todoList, item]
- }
-
- onToggleComplete(changedItem:TodoItem){
-  this.todoList = this.todoList.map((item)=> changedItem.id === item.id ? {...item,isCompleted:!changedItem.isCompleted}:item)
- }
+ 
 }

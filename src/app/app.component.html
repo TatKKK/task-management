@@ -1,10 +1,5 @@
-<header>
-  <h1 [innerText]="title"></h1>
-</header>
-
+<app-header></app-header>
 <main>
-  <app-add-todo (addTodo)="onAddTodo($event)"></app-add-todo>
-  <app-todo-list [todoList]="todoList" (toggleComplete)="onToggleComplete($event)"></app-todo-list>
+ <app-todo-list-page></app-todo-list-page>
 </main>
-
-<footer></footer>
+<app-footer></app-footer>
